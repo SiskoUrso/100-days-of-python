@@ -1,4 +1,4 @@
-# using /n can be used to make a new line
+# using \n can be used to make a new line
 print("What Have I Learned\n", "-------------------\n", "1. Functions\n", "2. Variables\n", "3. Comments\n")
 print()
 print("Enter two words: ")
