@@ -1,6 +1,8 @@
 # Blackjack Game - First Capstone Project
 
-This was the first capstone project provided in the 100 days of python. The list of cards were provided to start with and the following rules were given:
+This was the first capstone project provided in the 100 days of python. There was a [demo](https://appbrewery.github.io/python-day11-demo/) version to view to get an idea of what is expected.
+
+The list of cards were provided to start with and the following rules were given:
 
 - The deck is unlimited in size.
 - There are no jokers.
@@ -18,4 +20,4 @@ There was also a difficulty selection option to choose from :
 - Extra Hard 😭: Only use Hints 1 & 2 to complete the project.
 - Expert 🤯: Only use Hint 1 to complete the project.
 
-For myself I only used 1 hint but in fairness this was due to in the video of Angela explaining the rules of the projects and showing what the first 3 hints would lead you to I determined from that that the 3rd hint option would provide a flowchart which is the only hint I used during this project. 
+For myself I only used 1 hint but in all fairness this was due to in the video of Angela explaining the rules of the projects and showing what the first 3 hints would lead you to I determined from that that the 3rd hint option would provide a flowchart which is the only hint I used during this project.
