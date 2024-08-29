@@ -8,6 +8,11 @@ computer_wins = 0
 game_on = True
 
 def check_for_blackjack(player_cards, computer_cards):
+    """
+    Checks if either the player or computer has blackjack.
+
+    Returns either "player", "computer", or "draw" depending on who has blackjack.
+    """
     player_has_blackjack = 10 in player_cards and 11 in player_cards
     computer_has_blackjack = 10 in computer_cards and 11 in computer_cards
     if player_has_blackjack and computer_has_blackjack:
@@ -26,11 +31,25 @@ def check_for_blackjack(player_cards, computer_cards):
     return None
 
 def adjust_for_aces(cards):
+    """
+    If the player's hand value exceeds 21 and there is an ace in the hand, 
+    this function will replace the ace with a value of 1. 
+    """
     while 11 in cards and sum(cards) > 21:
         cards.remove(11)
         cards.append(1)
 
 def player_turn(player_cards):
+    """
+    Allows the player to draw cards ("y") and pass ("n") during their turn. The function
+    will return the total score of the player's hand at the end of their turn.
+
+    Args:
+        player_cards (list): A list of the player's cards.
+
+    Returns:
+        int: The total score of the player's hand at the end of their turn.
+    """
     while sum(player_cards) < 21:
         print(f"Your cards: {player_cards}, current score: {sum(player_cards)}")
         choice = input("Type 'y' to get another card, type 'n' to pass: ").lower()
@@ -42,12 +61,34 @@ def player_turn(player_cards):
     return sum(player_cards)
 
 def computer_turn(computer_cards):
+    """
+    Allows the computer to draw cards until it reaches a score of 17 or higher or goes over 21. The function
+    will return the total score of the computer's hand at the end of its turn.
+
+    Args:
+        computer_cards (list): A list of the computer's cards.
+
+    Returns:
+        int: The total score of the computer's hand at the end of its turn.
+    """
     while sum(computer_cards) < 17:
         computer_cards.append(random.choice(cards))
         adjust_for_aces(computer_cards)
     return sum(computer_cards)
 
 def display_results(player_cards, computer_cards, player_score, computer_score):
+    """
+    Prints out the final results of the game and determines the winner based on the scores.
+    
+    Args:
+        player_cards (list): A list of the player's cards.
+        computer_cards (list): A list of the computer's cards.
+        player_score (int): The total score of the player's hand.
+        computer_score (int): The total score of the computer's hand.
+    
+    Returns:
+        str: The winner of the game, either "player", "computer", or "draw".
+    """
     print(f"Your final hand: {player_cards}, final score: {player_score}")
     print(f"Computer's final hand: {computer_cards}, final score: {computer_score}")
     if player_score > 21:
@@ -73,6 +114,8 @@ while game_on:
     if play_choice == "y":
         player_cards = random.sample(cards, 2)
         computer_cards = random.sample(cards, 2)
+        adjust_for_aces(player_cards)
+        adjust_for_aces(computer_cards)
 
         blackjack_status = check_for_blackjack(player_cards, computer_cards)
         if blackjack_status:
