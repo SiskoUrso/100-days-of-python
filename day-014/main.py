@@ -50,6 +50,7 @@ def game(choice_A, choice_B, score):
 
         if user_choice == compare(choice_A, choice_B):
             score += 1
+            print("\n" * 20)
             print(f"You're right! Current score: {score}.")
             choice_A = choice_B
             random_choice2 = random.choice(game_data.data)
@@ -57,6 +58,8 @@ def game(choice_A, choice_B, score):
                 random_choice2 = random.choice(game_data.data)
             choice_B = random_choice2["name"], random_choice2["description"], random_choice2["country"], random_choice2["follower_count"]
         else:
+            print("\n" * 20)
+            print(logo)
             print(f"Sorry that's wrong. Final score: {score}.")
             continue_game = input("Would you like to play again? Type 'y' or 'n': ").lower()
             if continue_game == "y":
