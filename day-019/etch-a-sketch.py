@@ -42,7 +42,7 @@ def change_color():
     screen.listen()
     
 def pen_size():
-    user_choice = screen.textinput(title="Pen Size", prompt="Choose a number from 1 - 10: ")
+    user_choice = screen.numinput(title="Pen Size", prompt="Choose a number from 1 - 10: ", default=5, minval=1, maxval=10)
     tim.pensize(int(user_choice))
     tim.resizemode("auto")
     screen.listen()
@@ -81,6 +81,8 @@ screen.onkey(pen_up, "q")
 screen.onkey(pen_down, "e")
 screen.onkey(pen_size, "p")
 screen.onkey(stamp, "space")
+
+print("Controls:\nForward='w'\nBackward='s'\nLeft='a'\nRight='d'\nClear='c'\nShape='i'\nColor='t'\nBackground='u'\nStamp='space'\nPen Size='p'\nPen Up='q'\nPen Down='e'\nChange Color='t'\nChange Shape='i'\nChange Background='u'\nReset='c'")
 
 
 screen.exitonclick()
