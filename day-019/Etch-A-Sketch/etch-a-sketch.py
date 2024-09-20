@@ -86,3 +86,10 @@ print("Controls:\nForward='w'\nBackward='s'\nLeft='a'\nRight='d'\nClear='c'\nSha
 
 
 screen.exitonclick()
+
+
+#TODO: Break into classes in separate files one for screen and one for turtle, and then one main.py
+#TODO: Add a off button
+#TODO: Create button for menu to be displayed in the middle of the screen and then cleared but keeps the previous art done
+#TODO: Display the menu in the middle of the screen with the buttons and then user presses button to start which resets the screen
+#TODO: Create a button to remove the stamps
